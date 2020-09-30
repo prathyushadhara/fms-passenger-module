@@ -6,15 +6,17 @@ public class PassengerDto {
 	private String passengerName;
 	private int passengerAge;
 	private long passengerUIN;
+	private char gender;
 	
 
 	public PassengerDto() {
 	}
-	public PassengerDto(long pnrNumber,String passengerName,int passengerAge,long passengerUIN) {
+	public PassengerDto(long pnrNumber,String passengerName,int passengerAge,long passengerUIN,char gender) {
 		this.pnrNumber=pnrNumber;
 		this.passengerName=passengerName;
 		this.passengerAge=passengerAge;
 		this.passengerUIN=passengerUIN;
+		this.gender=gender;
 		
 	}
 	public long getPnrNumber() {
@@ -41,6 +43,13 @@ public class PassengerDto {
 	public void setPassengerUIN(long passengerUIN) {
 		this.passengerUIN = passengerUIN;
 	}
+	public char getGender() {
+		return gender;
+	}
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
 	
 
 }

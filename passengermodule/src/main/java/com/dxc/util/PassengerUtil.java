@@ -9,7 +9,7 @@ import com.dxc.entities.Passenger;
 public class PassengerUtil {
 	public PassengerDto passengerDto(Passenger passenger) {
 		PassengerDto dto = new PassengerDto(passenger.getPnrNumber(), passenger.getPassengerName(),
-				passenger.getPassengerAge(), passenger.getPassengerUIN());
+				passenger.getPassengerAge(), passenger.getPassengerUIN(),passenger.getGender());
 		return dto;
 	}
 

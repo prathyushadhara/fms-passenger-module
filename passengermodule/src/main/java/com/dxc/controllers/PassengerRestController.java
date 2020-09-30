@@ -2,6 +2,8 @@ package com.dxc.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,11 +30,12 @@ public class PassengerRestController {
 	private PassengerUtil passengerUtil;
 
 	@PostMapping(value = "/addPassenger")
-	public PassengerDto create(@RequestBody CreatePassengerRequest data) {
+	public PassengerDto create(@Valid @RequestBody CreatePassengerRequest data) {
 		String passengerName = data.getPassengerName();
 		int passengerAge = data.getPassengerAge();
 		long passengerUIN = data.getPassengerUIN();
-		Passenger passenger = new Passenger(passengerName, passengerAge, passengerUIN);
+		char gender=data.getGender();
+		Passenger passenger = new Passenger(passengerName, passengerAge, passengerUIN,gender);
 		passenger = passengerService.addPassenger(passenger);
 		PassengerDto response = passengerUtil.passengerDto(passenger);
 		return response;

@@ -15,14 +15,16 @@ public class Passenger {
 	private String passengerName;
 	private int passengerAge;
 	private long passengerUIN;
+	private char gender;
 
 	public Passenger() {
 	}
 
-	public Passenger(String passengerName, int passengerAge, long passengerUIN) {
+	public Passenger(String passengerName, int passengerAge, long passengerUIN,char gender) {
 		this.passengerName = passengerName;
 		this.passengerAge = passengerAge;
 		this.passengerUIN = passengerUIN;
+		this.gender=gender;
 
 	}
 
@@ -56,6 +58,14 @@ public class Passenger {
 
 	public void setPassengerUIN(long passengerUIN) {
 		this.passengerUIN = passengerUIN;
+	}
+
+	public char getGender() {
+		return gender;
+	}
+
+	public void setGender(char gender) {
+		this.gender = gender;
 	}
 
 	@Override
